@@ -1,0 +1,26 @@
+/run/beamOn 10
+exit
+/run/beamOn 100
+exit
+/run/beamOn 100
+/vis/sceneHandler/create
+/vis/open
+/vis/open OGL
+/vis/drawVolume
+/vis/viewer/se/viewpointThetaPhi 90. 0.
+/vis/viewer/set/viewpointThetaPhi 90. 0.
+/vis/open OGL 600x600-0+0
+exit
+/run/beamOn 100
+exit
+/run/beamOn 100
+exit
+exit
+exit
+/run/beamOn 100
+exit
+/run/beamOn 100
+exit
+/run/beamOn 1000
+exit
+

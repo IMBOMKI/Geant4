@@ -1,0 +1,57 @@
+TFile *_file0 = TFile::Open("data.root")
+.ls
+trdata->Print()
+q
+.q
+TFile *_file0 = TFile::Open("data.root")
+TH1F h1("h1","Histo from a Gaus",100,-3,3);
+h1.FillRandom("gaus",10000)
+list
+h1->Draw()
+trdata->Draw();
+h1->Fill
+h1->Fill()
+h1->Fill(0.314)
+h1->Print();
+h1->Dr
+h1->Draw();
+exit
+shutdown
+exit()
+TFile *_file0 = TFile::Open("data.root")
+exit()
+TFile *_file0 = TFile::Open("data.root")
+new TBrowser
+.q
+TFile *_file0 = TFile::Open("data.root")
+new TBrowser
+trdata->Draw("CHMposhx:CHMposhy", "evtid==47")
+new TBrowser
+TFile *_file0 = TFile::Open("data.root")
+new TBrowser
+.a
+.q
+TFile *_file0 = TFile::Open("data.root")
+new TBrowser
+TFile *_file0 = TFile::Open("data.root")
+new TBrower
+new TBrowser
+.ls
+trdata->Print()
+trdata->Draw("CHMposhx:CHMposhy", "evtid==47")
+trdata->SetMarkerStyle(20)
+trdata->SetMarkerSize(1)
+trdata->Draw("CHMposhx:CHMposhy", "evtid==47")
+trdata->Draw("CHMposhx:CHMposhy", "evtid==99")
+trdata->Draw("CHMspx:CHMspy","evtid==47"&&"CHMspprim==1")
+trdata->Draw("CHMspx:CHMspy","evtid==47&&CHMspprim==1")
+trdata->Draw("CHMspx:CHMspy","evtid==47")
+TFile *_file0 = TFile::Open("data.root")
+new TBrower
+new TBrowser
+trdata->Fit("CHMspx:CHMspy","evtid==47")
+trdata->Draw("CHMspx:CHMspy","evtid==47")
+trdata->Fit("CHMspx:CHMspy","evtid==47")
+CHMspx
+CHMspx.Print()
+trdata->Print()

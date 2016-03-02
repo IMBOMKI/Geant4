@@ -1,0 +1,2 @@
+/home/bomki/Geant4/examples/basic/B1-build/CMakeFiles/B1.dir
+/home/bomki/Geant4/examples/basic/B1-build/CMakeFiles/exampleB1.dir
