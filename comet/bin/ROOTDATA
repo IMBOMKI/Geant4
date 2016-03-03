@@ -1,0 +1,167 @@
+EXPLANATION ON trdata in data.root file
+
+******************************************************************************
+*Tree    :trdata    : data 
+tree                                              *
+*        :          : Tree compression factor = 1.46                       *
+******************************************************************************
+*Br    0 :evtid     : evtid/I
+
+This is event ID. Each beamOn creates one event.
+
+*Br    1 :genx      : genx/F
+*Br    2 :geny      : geny/F
+*Br    3 :genz      : genz/F
+*Br    4 :genpx     : genpx/F
+*Br    5 :genpy     : genpy/F
+*Br    6 :genpz     : genpz/F
+*Br    7 :genpt     : genpt/F
+
+Information on generated particle. One particle is generated in this 
+setup and its position, momentum are written.
+
+In following branches, HOD means hodoscope data, CHM means wire chamber 
+data. The word "sp" in branch name means "step point". Remember "hit" is 
+defined for each detector module, such as one wire or one hodoscope 
+scintillator. The "step point" are defined as Geant4 steps. Therefore, 
+each hit may be composed of several step points.
+
+*Br    8 :nhitHOD   : nhitHOD/I
+
+Number of hodoscope module which has hits.
+
+*Br    9 :HODnsphit : HODnsphit[nhitHOD]/I
+
+Number of step points for each hit.
+
+*Br   10 :HODsec1   : HODsec1[nhitHOD]/I
+
+Hit position identifier 1, which means up/down part of hodoscope
+
+*Br   11 :HODsec2   : HODsec2[nhitHOD]/I
+
+Number of hit module inside up/down hodoscope part [0:64]
+
+*Br   12 :HODedep   : HODedep[nhitHOD]/F
+
+Energy deposition by hit to hodoscope module
+
+*Br   13 :HODt0     : HODt0[nhitHOD]/F
+
+Time of first step point for this hit module
+
+*Br   14 :HODt1     : HODt1[nhitHOD]/F
+
+Time of last step point for this hit module
+
+*Br   15 :HODtm     : HODtm[nhitHOD]/F
+
+Energy-weighted mean time
+
+*Br   16 :HODposhx  : HODposhx[nhitHOD]/F
+*Br   17 :HODposhy  : HODposhy[nhitHOD]/F
+*Br   18 :HODposhz  : HODposhz[nhitHOD]/F
+
+hit position by averaging multiple step points
+
+*Br   19 :HODmomhx  : HODmomhx[nhitHOD]/F
+*Br   20 :HODmomhy  : HODmomhy[nhitHOD]/F
+*Br   21 :HODmomhz  : HODmomhz[nhitHOD]/F
+
+momentum by averaging multiple step points
+
+*Br   22 :HODposdx  : HODposdx[nhitHOD]/F
+*Br   23 :HODposdy  : HODposdy[nhitHOD]/F
+*Br   24 :HODposdz  : HODposdz[nhitHOD]/F
+*Br   25 :HODposdphi : HODposdphi[nhitHOD]/F
+
+the center position of hodocsope module which has this hit.
+
+*Br   26 :nspHOD    : nspHOD/I
+
+total number of step points on hodoscope in this event
+
+*Br   27 :HODhitidx : HODhitidx[nspHOD]/I
+
+index to "hit" of this step point
+
+*Br   28 :HODspx    : HODspx[nspHOD]/F
+*Br   29 :HODspy    : HODspy[nspHOD]/F
+*Br   30 :HODspz    : HODspz[nspHOD]/F
+
+The position of step point
+
+*Br   31 :HODspt    : HODspt[nspHOD]/F
+
+The time of step point
+
+*Br   32 :HODsppx   : HODsppx[nspHOD]/F
+*Br   33 :HODsppy   : HODsppy[nspHOD]/F
+*Br   34 :HODsppz   : HODsppz[nspHOD]/F
+
+momentum of step point
+
+*Br   35 :HODspedep : HODspedep[nspHOD]/F
+
+energy deposition of this step point
+
+*Br   36 :HODspidhep : HODspidhep[nspHOD]/I
+
+the PDG particle code of this step point
+
+*Br   37 :HODspprim : HODspprim[nspHOD]/O
+
+This is one if the particle generating this step point is "primary 
+particle", (= generated particle). This is zero if the particle is 
+secondary particle.
+
+Now the branches are for wire chamber. It's almost same with hodoscope 
+case. I will explain the difference only.
+
+*Br   38 :nhitCHM   : nhitCHM/I
+*Br   39 :CHMnsphit : CHMnsphit[nhitCHM]/I
+*Br   40 :CHMsec1   : CHMsec1[nhitCHM]/I
+
+This is the layer number of wire which has hit
+
+*Br   41 :CHMsec2   : CHMsec2[nhitCHM]/I
+
+This is the wire number inside layer which has hit.
+
+*Br   42 :CHMedep   : CHMedep[nhitCHM]/F
+*Br   43 :CHMt0     : CHMt0[nhitCHM]/F
+*Br   44 :CHMt1     : CHMt1[nhitCHM]/F
+*Br   45 :CHMtm     : CHMtm[nhitCHM]/F
+*Br   46 :CHMposhx  : CHMposhx[nhitCHM]/F
+*Br   47 :CHMposhy  : CHMposhy[nhitCHM]/F
+*Br   48 :CHMposhz  : CHMposhz[nhitCHM]/F
+*Br   49 :CHMmomhx  : CHMmomhx[nhitCHM]/F
+*Br   50 :CHMmomhy  : CHMmomhy[nhitCHM]/F
+*Br   51 :CHMmomhz  : CHMmomhz[nhitCHM]/F
+*Br   52 :CHMposdx  : CHMposdx[nhitCHM]/F
+*Br   53 :CHMposdy  : CHMposdy[nhitCHM]/F
+*Br   54 :CHMposdz  : CHMposdz[nhitCHM]/F
+*Br   55 :CHMposdphi : CHMposdphi[nhitCHM]/F
+
+Above four CHMposd[x,y,z,phi] are detector (=wire) position which has 
+hit. As I explained, the z information is not available from wire hit. 
+Therefore CHMposdz is every time 0.
+
+*Br   56 :nspCHM    : nspCHM/I
+*Br   57 :CHMhitidx : CHMhitidx[nspCHM]/I
+*Br   58 :CHMspx    : CHMspx[nspCHM]/F
+*Br   59 :CHMspy    : CHMspy[nspCHM]/F
+*Br   60 :CHMspz    : CHMspz[nspCHM]/F
+*Br   61 :CHMspt    : CHMspt[nspCHM]/F
+*Br   62 :CHMsppx   : CHMsppx[nspCHM]/F
+*Br   63 :CHMsppy   : CHMsppy[nspCHM]/F
+*Br   64 :CHMsppz   : CHMsppz[nspCHM]/F
+*Br   65 :CHMspedep : CHMspedep[nspCHM]/F
+*Br   66 :CHMspidhep : CHMspidhep[nspCHM]/I
+*Br   67 :CHMspprim : CHMspprim[nspCHM]/O
+
+As I explained today, try to find any "spiral" event from data set. For 
+example, try:
+
+trdata->Draw("CHMposhx:CHMposhy", "evtid==47")
+trdata->Draw("CHMspx:CHMspy", "evtid==47&&CHMspprim==1")
